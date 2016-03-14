@@ -1,0 +1,56 @@
+// Button Mixin
+.button {
+  background-color: @brand-red;
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  border: 0px;
+  transition: all .2s ease-in-out;
+  &:hover {
+    background-color: @brand-darkred;
+    border: 0px;
+    color: #fff;
+    transition: all .2s ease-in-out;
+  }
+}
+
+
+// Button Styles
+button {
+  .button;
+}
+.btn {
+  margin-left: 0px;
+  .button;
+}
+button.btn-default {
+  .button;
+}
+.vc_btn3-container {
+  button.vc_general {
+    .button;
+  }
+}
+.vc_btn3-container {
+  button.vc_btn3 {
+    .button;
+  }
+}
+.vc_btn3-container {
+  a.vc_btn3 {
+    .button;
+  }
+}
+.vc_btn3-container {
+  a.vc_general {
+    .button;
+  }
+}
+// Gravity Forms Buttons
+form {
+  input[type="submit"] {
+    .button;
+  }
+}
