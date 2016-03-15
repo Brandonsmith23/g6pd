@@ -26,7 +26,7 @@ Domain Path: /languages
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MElaunchers HANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MEg6pd HANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  * **********************************************************************
  */
@@ -140,10 +140,10 @@ final class g6pdcore {
    */
   private function define_constants() {
     $upload_dir = wp_upload_dir();
-    $this->define( 'launchers_PLUGIN_FILE', __FILE__ );
-    $this->define( 'launchers_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-    $this->define( 'launchers_VERSION', $this->version );
-    $this->define( 'launchers_LOG_DIR', $upload_dir['basedir'] . '/'.self::$name.'-logs/' );
+    $this->define( 'g6pd_PLUGIN_FILE', __FILE__ );
+    $this->define( 'g6pd_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+    $this->define( 'g6pd_VERSION', $this->version );
+    $this->define( 'g6pd_LOG_DIR', $upload_dir['basedir'] . '/'.self::$name.'-logs/' );
   }
 
   /**
@@ -250,7 +250,7 @@ final class g6pdcore {
     // After init action
     do_action( 'after_' . self::$name . '_init' );
 
-    add_filter('is_woocommerce', array( &$this, 'launchers_is_woocommerce' ));
+    add_filter('is_woocommerce', array( &$this, 'g6pd_is_woocommerce' ));
 
   }
 
@@ -290,7 +290,7 @@ final class g6pdcore {
     include_once( trailingslashit( $this->plugin_path() ) . 'functions.php' );
   }
 
-  public function launchers_is_woocommerce($check){
+  public function g6pd_is_woocommerce($check){
     if (is_tax ('product_industry')|| is_page(103)) {
       return true;
     }
@@ -421,11 +421,11 @@ final class g6pdcore {
  *
  * @return g6pdcore
  */
-function launchers() {
+function g6pd() {
   return g6pdcore::instance();
 }
 
 // Global for backwards compatibility.
-$GLOBALS['g6pdcore'] = launchers();
+$GLOBALS['g6pdcore'] = g6pd();
 
 }
