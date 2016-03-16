@@ -58,8 +58,7 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Footer 1', 'roots'),
     'id'            => 'sidebar-footer-1',
-    'class'         => 'col-md-4 col-sm-12',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="widget %1$s %2$s col-md-4 col-sm-12">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
@@ -68,8 +67,7 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Footer 2', 'roots'),
     'id'            => 'sidebar-footer-2',
-    'class'         => 'col-md-4 col-sm-12',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="widget %1$s %2$s col-md-4 col-sm-12">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
@@ -77,8 +75,7 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Footer 3', 'roots'),
     'id'            => 'sidebar-footer-3',
-    'class'         => 'col-md-4 col-sm-12',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="widget %1$s %2$s col-md-4 col-sm-12">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',

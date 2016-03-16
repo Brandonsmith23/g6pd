@@ -14,14 +14,26 @@
 
 
 // Footer Sidebar styles
-  .footer-main {
-
+  .main-footer {
+    ul.menu {
+      padding: 0;
+      li {
+        list-style-type: none;
+        float: left;
+        &:after {
+          content: "|";
+          margin: 0 5px;
+          font-weight: 300;
+        }
+      }
+    }
   }
 
 
   // Footer Social Media & Copyright styles
   .secondary-footer {
     text-align: center;
+    padding: 2% 0;
     .designed {
       font-size: @font-size-small;
     }
