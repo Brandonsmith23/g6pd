@@ -19,8 +19,8 @@
       </div>
     </div>
   </div>
-  <div class="secondary-footer row">
-    <div class="designed col-md-12">
+  <div class="secondary-footer">
+    <div class="designed container">
       <p>Copyright 2016 G6PD Deficiency Foundation. Designed by <a href="http://www.1fee.com" alt="1FEE.com">1FEE</a></p>
     </div>
   </div>

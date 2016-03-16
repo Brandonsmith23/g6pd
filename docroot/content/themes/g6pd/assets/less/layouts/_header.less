@@ -6,6 +6,7 @@
       width: 100%;
       position: relative;
       ul#menu-main {
+        padding: 33px 0 0;
         height: 80px;
         float: none;
         li {
@@ -13,7 +14,9 @@
           a {
             display: block;
             float: left;
-            height: 80px;
+            padding: 10px 15px;
+            border-top-right-radius: 2px;
+            border-top-left-radius: 2px;
           }
           &:hover {
             ul {
@@ -22,16 +25,18 @@
           }
         }
         ul.dropdown-menu {
+          height: 46px;
+          font-size: 16px;
           display: none;
           width: 100%;
           position:absolute;
-          top: 80px;
+          top: 47px;
           left: 0;
           padding: 0;
           text-align: center;
           border-radius: 2px;
           li {
-            padding: 5px 0;
+            padding: 0;
             a {
               height: auto;
             }
@@ -48,7 +53,7 @@
     .navbar-brand {
       img {
         width: 225px;
-        margin-top: -10px;
+        margin: -10px 20px 0 0;
         @media all and (min-width: 768px) {
           width: 350px;
           margin-top: -20px;
