@@ -223,7 +223,7 @@
 //
 //## Dropdown menu container and contents.
 //** Background for the dropdown menu.
-@dropdown-bg: @brand-blue;
+@dropdown-bg: fade(@brand-blue, 75%);
 
 //** Dropdown menu `border-color`.
 @dropdown-border: rgba(0,0,0,.15);
@@ -355,7 +355,7 @@
 //##
 // Basics of a navbar
 @navbar-height: 80px;
-@navbar-margin-bottom: @line-height-computed;
+@navbar-margin-bottom: 0;
 @navbar-border-radius: @border-radius-base;
 @navbar-padding-horizontal: floor((@grid-gutter-width / 2));
 @navbar-padding-vertical: ((@navbar-height - @line-height-computed) / 2);
@@ -367,9 +367,9 @@
 // Navbar links
 @navbar-default-link-color: @brand-darkgray;
 @navbar-default-link-hover-color: @brand-darkgray;
-@navbar-default-link-hover-bg: @brand-blue;
+@navbar-default-link-hover-bg: fade(@brand-blue, 50%);
 @navbar-default-link-active-color: @brand-white;
-@navbar-default-link-active-bg: @brand-blue;
+@navbar-default-link-active-bg: fade(@brand-blue, 75%);
 @navbar-default-link-disabled-color: #ccc;
 @navbar-default-link-disabled-bg: transparent;
 
