@@ -1,7 +1,5 @@
 .content-info {
-  padding: 2%;
   background: @brand-darkred;
-  background-image: url(../img/pattern-1.png);
   color: #fff;
 
   a {
@@ -11,10 +9,15 @@
     }
   }
 
+  .container {
+  }
+
 
 
 // Footer Sidebar styles
   .main-footer {
+    padding: 2% 0;
+    background-image: url(../img/pattern-1.png);
     ul.menu {
       padding: 0;
       li {
@@ -27,42 +30,39 @@
         }
       }
     }
+    ul.smedia {
+      padding: 0px;
+      text-align: center;
+      li {
+        display: inline-block;
+        margin: 0px 2%;
+        a {
+          display:block;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: @brand-white;
+          color: @brand-red;
+          &:hover {
+            background-color: @brand-red;
+            color: @brand-white;
+          }
+          i {
+            vertical-align: -50%;
+          }
+        }
+      }
+    }
   }
 
 
   // Footer Social Media & Copyright styles
   .secondary-footer {
     text-align: center;
-    padding: 2% 0;
+    background-color: @brand-darkred;
+    padding: 20px 0 1%;
     .designed {
       font-size: @font-size-small;
-    }
-    .copyright {
-      font-size: @font-size-small;
-    }
-    .smedia {
-      ul {
-        padding: 0px;
-        li {
-          display: inline-block;
-          margin: 0px 2%;
-          a {
-            display:block;
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            background-color: @brand-white;
-            color: @brand-red;
-            &:hover {
-              background-color: @brand-red;
-              color: @brand-white;
-            }
-            i {
-              vertical-align: -50%;
-            }
-          }
-        }
-      }
     }
   }
 }
