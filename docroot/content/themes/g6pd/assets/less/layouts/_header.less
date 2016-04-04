@@ -1,1 +1,119 @@
-.banner { }
+.banner {
+  font-size: 16px;
+  // Navigation
+  nav {
+    @media all and (min-width: 992px) {
+      ul#menu-main {
+        padding: 33px 0 0;
+        height: 80px;
+        float: none;
+        li {
+          float: none;
+          a {
+            display: block;
+            float: left;
+            padding: 10px 15px;
+            border-top-right-radius: 2px;
+            border-top-left-radius: 2px;
+          }
+          &:hover {
+            ul {
+              display:block;
+            }
+          }
+        }
+        ul.dropdown-menu {
+          height: 46px;
+          font-size: 16px;
+          display: none;
+          width: 100%;
+          position:absolute;
+          top: 47px;
+          left: 0;
+          padding: 0;
+          text-align: center;
+          border-radius: 2px;
+          li {
+            padding: 0;
+            a {
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  // Logo
+  .navbar-header {
+    .navbar-brand {
+      img {
+        width: 225px;
+        margin: -10px 20px 0 0;
+        @media all and (min-width: 768px) {
+          width: 350px;
+          margin-top: -20px;
+        }
+      }
+    }
+  }
+}
+
+
+// Dropdown Menu Styles
+.dropdown {
+  .dropdown-toggle {
+    @media all and (min-width: 992px) {
+      display: inline-block;
+    }
+  }
+  .dropdown-menu {
+    position: relative;
+    float: none;
+    padding: 5px 5px;
+    box-shadow: none;
+    li {
+      display: inline-block;
+    }
+  }
+}
+// Makes Dropdowns Open automatically on Mobile
+.navbar-collapse {
+  .dropdown {
+    .dropdown-menu {
+      @media all and (max-width: 991px ) {
+        display: block;
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        margin-left: 10px;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        li {
+          display: list-item;
+          a {
+            color: @brand-darkgray;
+            &:hover {
+              color: @brand-white;
+            }
+            &:active {
+              color: @brand-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Makes top nav menu items clickable
+.dropdown:hover {
+  transition: all 2s ease-in-out;
+  .dropdown-menu {
+    display: block;
+  }
+}

@@ -1,0 +1,36 @@
+.form-label {
+  font-weight: 400;
+  font-size: 16px;
+}
+.form-control {
+  background-color: fade(@brand-white, 50%) !important;
+  border-radius: 3px;
+  color: @brand-darkgray;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+// Gravity Forms
+form {
+  font-size: 16px;
+  .gform_body {
+    .ginput_container {
+      .gfield_radio {
+        label {
+          margin: 12px 24px;
+          .form-label;
+        }
+      }
+    }
+    input {
+      .form-control;
+    }
+  }
+}
+.gform_wrapper {
+  .gfield_radio {
+    li {
+      margin: 0;
+    }
+  }
+}

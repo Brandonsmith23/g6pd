@@ -1,0 +1,30 @@
+// White Text
+.white-text {
+  color: @brand-white;
+  a {
+    color: @brand-white;
+  }
+}
+// Dark Image with Text
+.dark-img {
+  .white-text;
+  text-shadow: 0 0 3px @brand-darkgray;
+}
+// Adds Caret After A tag
+p {
+  a {
+    &:after {
+      content: "\f0da";
+      font-family: "FontAwesome";
+      padding-left: 3px;
+      font-size: 16px;
+    }
+  }
+}
+
+
+// Awareness CtA
+
+.awareness {
+  padding: 15% 15px;
+}
