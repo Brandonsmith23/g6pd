@@ -12,25 +12,25 @@
   }
 #mega-menu-wrap-primary_navigation .mega-menu-toggle {
   background-color: @brand-white;
-  color: @brand-red;
+  color: @brand-blue;
   border-radius: 0;
 }
   #mega-menu-wrap-primary_navigation ul#mega-menu-primary_navigation {
     background-color: @brand-white;
-    text-align: right;
+    text-align: center;
     a.mega-menu-link {
       font-size: 18px;
-      color: @brand-red;
+      color: @brand-blue;
       border-bottom: 2px solid transparent;
       &:hover {
-        color: @brand-red;
+        color: @brand-blue;
         background: none;
-        border-bottom: 2px solid @brand-red;
+        border-bottom: 2px solid @brand-darkblue;
       }
       &:focus {
-        color: @brand-red;
+        color: @brand-blue;
         background: none;
-        border-bottom: 2px solid @brand-red;
+        border-bottom: 2px solid @brand-darkblue;
       }
     }
     // Megamenu Drop Downs
@@ -40,19 +40,35 @@
           font-size: 18px;
           font-weight: normal;
           text-transform: initial;
-          color: @brand-red;
+          color: @brand-blue;
           border-bottom: 2px solid transparent;
           &:hover {
-            color: @brand-red;
+            color: @brand-blue;
             font-weight: normal;
             background: none;
-            border-bottom: 2px solid @brand-red;
+            border-bottom: 2px solid @brand-darkblue;
           }
           &:focus {
-            color: @brand-red;
+            color: @brand-blue;
             font-weight: normal;
             background: none;
-            border-bottom: 2px solid @brand-red;
+            border-bottom: 2px solid @brand-darkblue;
+          }
+        }
+      }
+      &.mega-current_page_item {
+        a.mega-menu-link {
+          border-bottom: 2px solid @brand-darkblue;
+        }
+      }
+      &.mega-toggle-on {
+        a.mega-menu-link {
+          background: @brand-white;
+          color: @brand-blue;
+        }
+        ul.mega-sub-menu {
+          a.mega-menu-link {
+            background: none !important;
           }
         }
       }
