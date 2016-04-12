@@ -1,51 +1,63 @@
 .banner {
-  font-size: 16px;
+  border: 0px;
+  box-shadow: 0 0 2px fade(@brand-black, 50%);
+  @media all and (min-width: 992px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
   // Navigation
   nav {
-    @media all and (min-width: 992px) {
-      ul#menu-main {
-        padding: 33px 0 0;
-        height: 80px;
-        float: none;
-        li {
-          float: none;
-          a {
-            display: block;
-            float: left;
-            padding: 10px 15px;
-            border-top-right-radius: 2px;
-            border-top-left-radius: 2px;
-          }
+    border: 0px;
+  }
+#mega-menu-wrap-primary_navigation .mega-menu-toggle {
+  background-color: @brand-white;
+  color: @brand-red;
+  border-radius: 0;
+}
+  #mega-menu-wrap-primary_navigation ul#mega-menu-primary_navigation {
+    background-color: @brand-white;
+    text-align: right;
+    a.mega-menu-link {
+      font-size: 18px;
+      color: @brand-red;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        color: @brand-red;
+        background: none;
+        border-bottom: 2px solid @brand-red;
+      }
+      &:focus {
+        color: @brand-red;
+        background: none;
+        border-bottom: 2px solid @brand-red;
+      }
+    }
+    // Megamenu Drop Downs
+    li.mega-menu-item {
+      ul.mega-sub-menu {
+        a.mega-menu-link {
+          font-size: 18px;
+          font-weight: normal;
+          text-transform: initial;
+          color: @brand-red;
+          border-bottom: 2px solid transparent;
           &:hover {
-            ul {
-              display:block;
-            }
+            color: @brand-red;
+            font-weight: normal;
+            background: none;
+            border-bottom: 2px solid @brand-red;
           }
-        }
-        ul.dropdown-menu {
-          height: 46px;
-          font-size: 16px;
-          display: none;
-          width: 100%;
-          position:absolute;
-          top: 47px;
-          left: 0;
-          padding: 0;
-          text-align: center;
-          border-radius: 2px;
-          li {
-            padding: 0;
-            a {
-              height: auto;
-            }
+          &:focus {
+            color: @brand-red;
+            font-weight: normal;
+            background: none;
+            border-bottom: 2px solid @brand-red;
           }
         }
       }
     }
   }
-
-
-
   // Logo
   .navbar-header {
     .navbar-brand {
@@ -58,62 +70,5 @@
         }
       }
     }
-  }
-}
-
-
-// Dropdown Menu Styles
-.dropdown {
-  .dropdown-toggle {
-    @media all and (min-width: 992px) {
-      display: inline-block;
-    }
-  }
-  .dropdown-menu {
-    position: relative;
-    float: none;
-    padding: 5px 5px;
-    box-shadow: none;
-    li {
-      display: inline-block;
-    }
-  }
-}
-// Makes Dropdowns Open automatically on Mobile
-.navbar-collapse {
-  .dropdown {
-    .dropdown-menu {
-      @media all and (max-width: 991px ) {
-        display: block;
-        position: static;
-        float: none;
-        width: auto;
-        margin-top: 0;
-        margin-left: 10px;
-        background-color: transparent;
-        border: 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        li {
-          display: list-item;
-          a {
-            color: @brand-darkgray;
-            &:hover {
-              color: @brand-white;
-            }
-            &:active {
-              color: @brand-white;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-// Makes top nav menu items clickable
-.dropdown:hover {
-  transition: all 2s ease-in-out;
-  .dropdown-menu {
-    display: block;
   }
 }
