@@ -44,3 +44,21 @@ class Roots_Sidebar {
     return is_page_template($page_template);
   }
 }
+
+/**
+ * Register  sidebars and widgetized areas.
+ *
+ */
+function arphabet_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Secondary',
+		'id'            => 'secondary',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
