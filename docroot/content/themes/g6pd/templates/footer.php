@@ -10,7 +10,7 @@
             <h3>Social Media</h3>
             <ul class="smedia">
               <li><a href="https://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a></li>
-              
+
             </ul>
             <p><a href="/contact-us/" class="button">Contact Us</a></p>
           </div>
@@ -24,7 +24,7 @@
   <div class="secondary-footer">
     <p>g6pdDF is a 501-c3 Non for Profit Organization</p>
     <div class="designed container">
-      <p>Copyright 2016 G6PD Deficiency Foundation.</p>
+      <p>copyright 2016 G6PD Deficiency Foundation.</p>
     </div>
   </div>
 </footer>
