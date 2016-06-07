@@ -6,6 +6,30 @@
     left: 0;
     right: 0;
   }
+  .container {
+    position: relative;
+  }
+  // donate button
+  .donate-button {
+    font-family: @font-family-sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: @brand-white;
+    background-color: @brand-red;
+    padding: 8px 15px;
+    margin: 25px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    transition: background .5s;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    &:hover {
+      background-color: @brand-darkred;
+    }
+
+  }
   // Navigation
   nav {
     border: 0px;
@@ -23,14 +47,14 @@
       color: @brand-blue;
       border-bottom: 2px solid transparent;
       &:hover {
-        color: @brand-blue;
+        color: @brand-red;
         background: none;
-        border-bottom: 2px solid @brand-darkblue;
+        border-bottom: 2px solid @brand-red;
       }
       &:focus {
-        color: @brand-blue;
+        color: @brand-red;
         background: none;
-        border-bottom: 2px solid @brand-darkblue;
+        border-bottom: 2px solid @brand-red;
       }
     }
     // Megamenu Drop Downs
@@ -41,30 +65,31 @@
           font-weight: normal;
           text-transform: initial;
           color: @brand-blue;
-          border-bottom: 2px solid transparent;
+          border-bottom: 3px solid transparent;
           &:hover {
-            color: @brand-blue;
+            color: @brand-red;
             font-weight: normal;
             background: none;
-            border-bottom: 2px solid @brand-darkblue;
+            border-bottom: 3px solid @brand-red;
           }
           &:focus {
-            color: @brand-blue;
+            color: @brand-red;
             font-weight: normal;
             background: none;
-            border-bottom: 2px solid @brand-darkblue;
+            border-bottom: 3px solid @brand-red;
           }
         }
       }
       &.mega-current_page_item {
         a.mega-menu-link {
-          border-bottom: 2px solid @brand-darkblue;
+          border-bottom: 3px solid @brand-darkblue;
         }
       }
       &.mega-toggle-on {
         a.mega-menu-link {
           background: @brand-white;
-          color: @brand-blue;
+          color: @brand-red;
+          border-bottom: 3px solid @brand-red;
         }
         ul.mega-sub-menu {
           a.mega-menu-link {
