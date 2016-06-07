@@ -2,6 +2,7 @@
   <div class="container">
     <div class="navbar-header row">
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img src=<?php echo get_stylesheet_directory_uri().'/assets/img/G6PD-Logo.png'; ?>></a>
+      <a class="donate-button" href="<?php echo get_permalink( get_page_by_title( 'Donate Today' ) ) ?>">Make a Donation</a>
     </div>
 
     <div class="row">
