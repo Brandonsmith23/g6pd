@@ -6,13 +6,14 @@
           <?php dynamic_sidebar('sidebar-footer-1'); ?>
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-          <h3>Social Media</h3>
-          <ul class="smedia">
-            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a></li>
-            <li><a href="http://www.googleplus.com/"><i class="fa fa-google-plus fa-lg"></i></a></li>
-            <li><a href="https://www.twitter.com"><i class="fa fa-twitter fa-lg"></i></a></li>
-          </ul>
-          <p><a href="/contact-us/" class="button">Contact Us</a></p>
+          <div class="smedia-module">
+            <h3>Social Media</h3>
+            <ul class="smedia">
+              <li><a href="https://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a></li>
+              
+            </ul>
+            <p><a href="/contact-us/" class="button">Contact Us</a></p>
+          </div>
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
           <?php dynamic_sidebar('sidebar-footer-2'); ?>
