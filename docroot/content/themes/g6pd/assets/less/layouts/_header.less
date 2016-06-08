@@ -1,6 +1,7 @@
 .banner {
   border: 0px;
   box-shadow: 0 0 2px fade(@brand-black, 50%);
+
   @media all and (min-width: 992px) {
     position: fixed;
     left: 0;
@@ -8,9 +9,11 @@
   }
   .container {
     position: relative;
+
   }
   // donate button
   .donate-button {
+    z-index: 9999;
     font-family: @font-family-sans-serif;
     font-weight: 300;
     text-transform: uppercase;
@@ -27,6 +30,12 @@
     -moz-transition: background .5s;
     &:hover {
       background-color: @brand-darkred;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 12px;
+      right: auto;
+      left: 5px;
+      top: 55px;
     }
 
   }
