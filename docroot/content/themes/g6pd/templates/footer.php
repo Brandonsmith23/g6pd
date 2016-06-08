@@ -24,7 +24,7 @@
   <div class="secondary-footer">
     <p>g6pdDF is a 501-c3 Non for Profit Organization</p>
     <div class="designed container">
-      <p>copyright 2016 G6PD Deficiency Foundation.</p>
+      <p>Copyright 2016 g6pd Deficiency Foundation.</p>
     </div>
   </div>
 </footer>
