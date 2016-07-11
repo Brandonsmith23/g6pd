@@ -22,6 +22,19 @@ var Roots = {
   // All pages
   common: {
     init: function() {
+
+        var lastScrollTop = 0;
+        $(window).scroll(function(event){
+          console.log('showfooter');
+           var st = $(this).scrollTop();
+           if (st > lastScrollTop){
+             $(".donate-footer").addClass("footer-visible");
+
+           } else {
+             $(".donate-footer").removeClass("footer-visible");
+           }
+           lastScrollTop = st;
+        });
         $(function(){ // document ready
 
         var stickyTop = $('#what-is').offset().top; // returns number
@@ -47,6 +60,9 @@ var Roots = {
         //   }
         //
         // });
+
+
+
 
       });
     }
