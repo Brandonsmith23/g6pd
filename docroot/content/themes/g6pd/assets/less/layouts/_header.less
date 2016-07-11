@@ -43,80 +43,28 @@
   nav {
     border: 0px;
   }
-#mega-menu-wrap-primary_navigation .mega-menu-toggle {
-  background-color: @brand-white;
-  color: @brand-blue;
-  border-radius: 0;
-}
-  #mega-menu-wrap-primary_navigation ul#mega-menu-primary_navigation {
-    background-color: @brand-white;
-    text-align: center;
-    a.mega-menu-link {
-      font-size: 18px;
-      color: @brand-blue;
-      border-bottom: 2px solid transparent;
-      &:hover {
-        color: @brand-red;
-        background: none;
-        border-bottom: 2px solid @brand-red;
-      }
-      &:focus {
-        color: @brand-red;
-        background: none;
-        border-bottom: 2px solid @brand-red;
-      }
-    }
-    // Megamenu Drop Downs
-    li.mega-menu-item {
-      ul.mega-sub-menu {
-        a.mega-menu-link {
-          font-size: 18px;
-          font-weight: normal;
-          text-transform: initial;
-          color: @brand-blue;
-          border-bottom: 3px solid transparent;
-          &:hover {
-            color: @brand-red;
-            font-weight: normal;
-            background: none;
-            border-bottom: 3px solid @brand-red;
-          }
-          &:focus {
-            color: @brand-red;
-            font-weight: normal;
-            background: none;
-            border-bottom: 3px solid @brand-red;
-          }
-        }
-      }
-      &.mega-current_page_item {
-        a.mega-menu-link {
-          border-bottom: 3px solid @brand-darkblue;
-        }
-      }
-      &.mega-toggle-on {
-        a.mega-menu-link {
-          background: @brand-white;
-          color: @brand-red;
-          border-bottom: 3px solid @brand-red;
-        }
-        ul.mega-sub-menu {
-          a.mega-menu-link {
-            background: none !important;
-          }
-        }
-      }
-    }
-  }
   // Logo
   .navbar-header {
     .navbar-brand {
+      padding-top: 14px;
+      float: left;
       img {
-        width: 225px;
-        margin: -10px 20px 0 0;
+        width: 100%;
         @media all and (min-width: 768px) {
-          width: 350px;
-          margin-top: -20px;
+
+        }
+      }
+    }
+    .navbar-nav {
+      @media screen and (min-width: @screen-md-min) {
+        .dropdown:hover .dropdown-menu{
+          display: block;
+        }
+
+      }
+      li {
+        a {
+
         }
       }
     }
