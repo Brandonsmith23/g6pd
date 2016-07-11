@@ -14,10 +14,7 @@
 p {
   a {
     &:after {
-      content: "\f0da";
-      font-family: "FontAwesome";
-      padding-left: 3px;
-      font-size: 16px;
+
     }
   }
 }
@@ -25,11 +22,11 @@ p {
 // Content Top Margins for Fixed Navigation
 .content{
   @media all and (min-width: 992px) {
-    margin: 120px 0 0;
+    margin: 80px 0 0;
   }
   .archive & {
     @media all and (min-width: 992px) {
-      margin: 140px 0 0;
+      margin: 80px 0 0;
     }
   }
   .single & {
@@ -50,7 +47,21 @@ p {
 // Hero Image Styles
 .hero-img {
   height: 300px;
+  margin-bottom: 0px;
   .hero-heading {
-    margin: 50px 0 0;
+    margin: 50px 0 ;
+  }
+}
+
+
+
+ul#menu-g6pd-deficiency {
+  list-style-type: none !important;
+  li {
+    padding: 9px 0;
+    border-bottom: 1px solid @gray-light;
+    &:last-of-type {
+      border-bottom: 0px;
+    }
   }
 }
