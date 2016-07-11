@@ -29,7 +29,7 @@
   </div>
   <div class="donate-footer">
     <div class="container">
-      Support our growing G6PD Deficiency Awareness Campaign Today! &nbsp;<a class="donate-button" href="/take-action/donate-today/">Donate</a>
+      Support our growing G6PD Deficiency Awareness Campaign Today! &nbsp;<a class="donate-button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MC%E2%80%A6">Donate</a>
     </div>
   </div>
 </footer>
