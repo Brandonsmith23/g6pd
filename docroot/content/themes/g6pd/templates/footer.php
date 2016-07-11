@@ -27,4 +27,9 @@
       <p>Copyright 2016 g6pd Deficiency Foundation.</p>
     </div>
   </div>
+  <div class="donate-footer">
+    <div class="container">
+      Support our growing G6PD Deficiency Awareness Campaign Today! &nbsp;<a class="donate-button" href="/take-action/donate-today/">Donate</a>
+    </div>
+  </div>
 </footer>

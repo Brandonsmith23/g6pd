@@ -1,7 +1,7 @@
 .content-info {
   background: @gray;
   color: #fff;
-
+  padding-bottom: 80px;
   a {
     color: #fff;
     &:hover {
@@ -78,4 +78,47 @@
 
 .smedia-module {
   text-align: center;
+}
+
+.donate-footer {
+  font-weight: 300;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,.6);
+  text-align: center;
+  z-index: 999999;
+  padding: 15px 0;
+  margin-bottom: -70px;
+  transition: margin 1s ease-in-out;
+  -moz-transition: margin 0.5s ease-in-out;
+  -webkit-transition: margin 0.5s ease-in-out;
+  .donate-button {
+    font-weight: 300;
+    font-size: 14px;
+    display: inline-block;
+    background-color: @brand-red;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 2px;
+    &:hover {
+      font-weight: 300;
+      font-size: 14px;
+      display: inline-block;
+      background-color: @brand-darkred;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 3px;
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+}
+
+.footer-visible {
+  margin-bottom: 0px !important;
 }
