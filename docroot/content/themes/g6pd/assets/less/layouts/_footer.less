@@ -27,6 +27,9 @@
   .main-footer {
     padding: 2% 0;
     background-image: url(../img/pattern-1.png);
+    a:hover {
+      color: @brand-red;
+    }
     ul.menu {
       padding: 0;
       li {
@@ -90,7 +93,7 @@
   text-align: center;
   z-index: 999999;
   padding: 15px 0;
-  margin-bottom: -70px;
+  margin-bottom: -100px;
   transition: margin 1s ease-in-out;
   -moz-transition: margin 0.5s ease-in-out;
   -webkit-transition: margin 0.5s ease-in-out;
@@ -118,6 +121,13 @@
     }
   }
 }
+
+@media screen and (min-width: 660px) {
+  .donate-footer {
+      margin-bottom: -70px;
+  }
+}
+
 
 .footer-visible {
   margin-bottom: 0px !important;
