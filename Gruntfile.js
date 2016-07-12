@@ -4,24 +4,14 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   // Show elapsed time
   require('time-grunt')(grunt);
+  var themeName = 'g6pd';
+  var themeDir = 'docroot/content/themes/' + themeName;
 
   var jsFileList = [
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/transition.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/alert.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/button.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/carousel.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/collapse.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/dropdown.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/modal.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/tooltip.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/popover.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/scrollspy.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/tab.js',
-    'docroot/content/themes/g6pd/assets/vendor/bootstrap/js/affix.js',
-    'docroot/content/themes/g6pd/assets/js/plugins/*.js',
-    'docroot/content/themes/g6pd/assets/js/_*.js'
-  ];
-
+      themeDir + '/assets/vendor/bootstrap/dist/js/bootstrap.min.js',
+      themeDir + '/assets/js/plugins/*.js',
+      themeDir + '/assets/js/_*.js'
+    ];
   grunt.initConfig({
     jshint: {
       options: {

@@ -44,10 +44,10 @@
     border: 0px;
   }
   // Logo
-  .navbar-header {
+
     .navbar-brand {
-      padding-top: 14px;
-      float: left;
+      padding-top: 20px;
+      width: 220px;
       img {
         width: 100%;
         @media all and (min-width: 768px) {
@@ -55,18 +55,23 @@
         }
       }
     }
+
+    .navbar-header {
+    }
     .navbar-nav {
-      @media screen and (min-width: @screen-md-min) {
+      @media screen and (min-width: @screen-lg-min) {
         .dropdown:hover .dropdown-menu{
           display: block;
         }
+        float: right;
 
-      }
-      li {
-        a {
 
-        }
       }
     }
-  }
+
+
+}
+
+.navbar-toggle {
+  background-color: @brand-red;
 }
