@@ -22,6 +22,39 @@ var Roots = {
   // All pages
   common: {
     init: function() {
+      $('.navbar-collapse').find('.dropdown').each(function() {
+        $(this).children('a').each(function() {
+          var url = $(this).attr('href');
+          if (url !== '#') {
+            $(this).attr('data-url', url);
+            $(this).attr('href', '#');
+          }
+        });
+        $(this).children('a').click(function(e) {
+          e.preventDefault();
+        });
+
+        if ($(this).closest('.navbar-toggle').css('display') !== 'none') {
+          $(this).on({
+            'click': function(e) {
+              if (e.target === $(this).children('a').first().get(0)) {
+                if ($(this).hasClass('open') || $(document).width() >= 1200) {
+                  document.location.href = $(this).children('a').first().attr('data-url');
+                } else {
+                  $(this).addClass('open');
+                }
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                return false;
+              }
+            },
+            'hide.bs.dropdown': function(e) {
+              e.preventDefault();
+              return false;
+            }
+          });
+        }
+      });
 
         var lastScrollTop = 0;
         $(window).scroll(function(event){
