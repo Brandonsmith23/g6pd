@@ -23,7 +23,7 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "http://wpackagist.org"
+      "url": "https://wpackagist.org"
     },
     {
       "type": "package",
@@ -43,11 +43,11 @@
       "package": {
         "name": "gravityforms",
         "type": "wordpress-plugin",
-        "version": "1.9.13.26",
+        "version": "2.0.2",
         "source": {
-          "url": "git@github.com:gravityforms/gravityforms.git",
+          "url": "git@github.com:wp-premium/gravityforms.git",
           "type": "git",
-          "reference": "aa5f0e7f8f10eba3a0f87f85d36acf33a94a4c6c"
+          "reference": "62e43be775e9baeb37bac3665b9e9936e6db21d9"
         }
       }
     },
@@ -56,11 +56,11 @@
       "package": {
         "name": "acf",
         "type": "wordpress-plugin",
-        "version": "5.3.2.2",
+        "version": "5.3.9.2",
         "source": {
           "url": "git@github.com:newmediadenver/wp-acf.git",
           "type": "git",
-          "reference": "fa616408991ce5ed9332799d8a3d4668c1febac7"
+          "reference": "8b3de1fd15b8899543ff5d2763c899877c16b52f"
         }
       }
     },
@@ -69,11 +69,11 @@
       "package": {
         "name": "wpcli-acf",
         "type": "wordpress-plugin",
-        "version": "1.2.1",
+        "version": "2.0",
         "source": {
           "url": "git@github.com:hoppinger/advanced-custom-fields-wpcli.git",
           "type": "git",
-          "reference": "139b0ad02c811a7c7f33bd103e564db5d6e6b2bf"
+          "reference": "4beed9a19b560513a2ced4cd5acf829a786fb9c3"
         }
       }
     },
@@ -93,17 +93,17 @@
   ],
   "require": {
     "php": ">=5.3",
-    "johnpbloch/wordpress": "4.3.1",
+    "johnpbloch/wordpress": "4.5.3",
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "1.0.9",
-    "roots": "7.0.3",
-    "gravityforms": "~1.9",
-    "acf": "~5.3",
-    "wpcli-acf": "~1.2",
+    "gravityforms": "2.0.2",
+    "acf": "5.3.9.2",
+    "wpcli-acf": "2.0",
     "wpackagist-plugin/wp-cfm": "~1.4",
     "wpackagist-plugin/wordpress-importer": "~0.6",
-    "wpackagist-plugin/woocommerce": "2.4.13",
+    "wpackagist-plugin/woocommerce": "2.6.2",
     "wpackagist-plugin/wordpress-seo": "~3.0",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "1.8.2",
     "mu-plugins": "~1.0.0"
   },
   "extra": {
