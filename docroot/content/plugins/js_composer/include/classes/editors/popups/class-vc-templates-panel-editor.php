@@ -54,7 +54,10 @@ class Vc_Templates_Panel_Editor implements Vc_Render {
 		 *  'vc_frontend_load_template' -> loading template content for frontend
 		 *  'vc_delete_template' -> deleting template by index
 		 */
-		add_action( 'wp_ajax_vc_save_template', array( &$this, 'save' ) );
+		add_action( 'wp_ajax_vc_save_template', array(
+			&$this,
+			'save',
+		) );
 		add_action( 'wp_ajax_vc_backend_load_template', array(
 			&$this,
 			'renderBackendTemplate',
@@ -67,12 +70,15 @@ class Vc_Templates_Panel_Editor implements Vc_Render {
 			&$this,
 			'renderTemplatePreview',
 		) );
-		add_action( 'wp_ajax_vc_delete_template', array( &$this, 'delete' ) );
-
-		add_action( 'vc-render-templates-preview-template', array(
+		add_action( 'wp_ajax_vc_delete_template', array(
 			&$this,
-			'addScriptsToTemplatePreview',
+			'delete',
 		) );
+
+		/*		add_action( 'vc-render-templates-preview-template', array(
+					&$this,
+					'addScriptsToTemplatePreview',
+				) );*/
 
 	}
 
@@ -281,6 +287,7 @@ HTML;
 		if ( '' === $template_id ) {
 			die( 'Error: Vc_Templates_Panel_Editor::renderFrontendTemplate:1' );
 		}
+		WPBMap::addAllMappedShortcodes();
 		if ( 'my_templates' === $template_type ) {
 			$saved_templates = get_option( $this->option_name );
 			vc_frontend_editor()->setTemplateContent( $saved_templates[ $template_id ]['template'] );
@@ -324,6 +331,7 @@ HTML;
 	 * vc_filter: vc_templates_render_template - hook to override singe template rendering in panel window
 	 */
 	public function render() {
+		_deprecated_function( '\Vc_Templates_Panel_Editor::render', '4.7 (will be removed in 4.11)', '\Vc_Templates_Panel_Editor::renderUITemplate' );
 		vc_include_template( 'editors/popups/panel_templates.tpl.php', array(
 			'box' => $this,
 		) );
@@ -408,6 +416,7 @@ HTML;
 		if ( ! isset( $template_id, $template_type ) || '' === $template_id || '' === $template_type ) {
 			die( 'Error: Vc_Templates_Panel_Editor::renderBackendTemplate:1' );
 		}
+		WPBMap::addAllMappedShortcodes();
 		if ( 'my_templates' === $template_type ) {
 			$saved_templates = get_option( $this->option_name );
 
@@ -437,7 +446,10 @@ HTML;
 		vc_user_access()
 			->checkAdminNonce()
 			->validateDie()
-			->wpAny( array( 'edit_post', (int) vc_request_param( 'post_id' ) ) )
+			->wpAny( array(
+				'edit_post',
+				(int) vc_request_param( 'post_id' ),
+			) )
 			->validateDie()
 			->part( 'templates' )
 			->can()
@@ -446,11 +458,12 @@ HTML;
 		$template_id = vc_request_param( 'template_unique_id' );
 		$template_type = vc_request_param( 'template_type' );
 		global $current_user;
-		get_currentuserinfo();
+		wp_get_current_user();
 
 		if ( ! isset( $template_id, $template_type ) || '' === $template_id || '' === $template_type ) {
 			die( __( 'Error: wrong template id.', 'js_composer' ) );
 		}
+		WPBMap::addAllMappedShortcodes();
 		if ( 'my_templates' === $template_type ) {
 			$saved_templates = get_option( $this->option_name );
 
@@ -475,11 +488,23 @@ HTML;
 
 	}
 
+	public function registerPreviewScripts() {
+		visual_composer()->registerAdminJavascript();
+		visual_composer()->registerAdminCss();
+		vc_backend_editor()->registerBackendJavascript();
+		vc_backend_editor()->registerBackendCss();
+		wp_register_script( 'vc_editors-templates-preview-js', vc_asset_url( 'js/editors/templates-preview.js' ), array(
+			'vc-backend-min-js',
+		), WPB_VC_VERSION, true );
+	}
+
 	/**
 	 * Enqueue required scripts for template preview
 	 * @since 4.8
 	 */
 	public function enqueuePreviewScripts() {
+		vc_backend_editor()->enqueueCss();
+		vc_backend_editor()->enqueueJs();
 		wp_enqueue_script( 'vc_editors-templates-preview-js' );
 	}
 
@@ -529,6 +554,16 @@ HTML;
 	}
 
 	/**
+	 * Get user templates
+	 *
+	 * @since 4.12
+	 * @return mixed
+	 */
+	public function getUserTemplates() {
+		return apply_filters( 'vc_get_user_templates', get_option( $this->option_name ) );
+	}
+
+	/**
 	 * Function to get all templates for display
 	 *  - with image (optional preview image)
 	 *  - with unique_id (required for do something for rendering.. )
@@ -546,7 +581,7 @@ HTML;
 		// Here we go..
 		if ( apply_filters( 'vc_show_user_templates', true ) ) {
 			// We need to get all "My Templates"
-			$user_templates = apply_filters( 'vc_get_user_templates', get_option( $this->option_name ) );
+			$user_templates = $this->getUserTemplates();
 			// this has only 'name' and 'template' key  and index 'key' is template id.
 			$arr_category = array(
 				'category' => 'my_templates',
@@ -675,7 +710,6 @@ HTML;
 			if ( ! is_array( $this->default_templates ) ) {
 				$this->default_templates = array();
 			}
-
 			$this->default_templates[] = $data;
 
 			return true;
@@ -715,7 +749,10 @@ HTML;
 	 */
 	public function sortTemplatesByCategories( array $data ) {
 		$buffer = $data;
-		usort( $buffer, array( &$this, 'cmpCategory' ) );
+		uasort( $buffer, array(
+			&$this,
+			'cmpCategory',
+		) );
 
 		return $buffer;
 	}
@@ -729,7 +766,10 @@ HTML;
 	 */
 	public function sortTemplatesByNameWeight( array $data ) {
 		$buffer = $data;
-		usort( $buffer, array( &$this, 'cmpNameWeight' ) );
+		uasort( $buffer, array(
+			&$this,
+			'cmpNameWeight',
+		) );
 
 		return $buffer;
 	}
@@ -831,6 +871,7 @@ HTML;
 		$output = $shortcodes_custom_css = '';
 		$shortcodes_custom_css = visual_composer()->parseShortcodesCustomCss( vc_frontend_editor()->getTemplateContent() );
 		if ( ! empty( $shortcodes_custom_css ) ) {
+			$shortcodes_custom_css = strip_tags( $shortcodes_custom_css );
 			$output .= '<style type="text/css" data-type="vc_shortcodes-custom-css">';
 			$output .= $shortcodes_custom_css;
 			$output .= '</style>';
@@ -839,7 +880,7 @@ HTML;
 	}
 
 	public function addScriptsToTemplatePreview() {
-		wp_enqueue_script( 'vc-template-preview-script', vc_asset_url( 'js/editors/vc_ui-panel-templates-preview-be.js' ), array( 'wpb_js_composer_js_custom_views' ), WPB_VC_VERSION, true );
+		// wp_enqueue_script( 'vc-template-preview-script', vc_asset_url( 'js/editors/vc_ui-panel-templates-preview-be.js' ), array( 'vc-backend-min-js' ), WPB_VC_VERSION, true );
 	}
 
 	public function renderTemplateListItem( $template ) {
@@ -847,7 +888,7 @@ HTML;
 		$template_id = esc_attr( $template['unique_id'] );
 		$template_id_hash = md5( $template_id ); // needed for jquery target for TTA
 		$template_name = esc_html( $name );
-		$template_name_lower = esc_attr( strtolower( $template_name ) );
+		$template_name_lower = esc_attr( vc_slugify( $template_name ) );
 		$template_type = esc_attr( isset( $template['type'] ) ? $template['type'] : 'custom' );
 		$custom_class = esc_attr( isset( $template['custom_class'] ) ? $template['custom_class'] : '' );
 
@@ -871,5 +912,9 @@ HTML;
 HTML;
 
 		return $output;
+	}
+
+	public function getOptionName() {
+		return $this->option_name;
 	}
 }
