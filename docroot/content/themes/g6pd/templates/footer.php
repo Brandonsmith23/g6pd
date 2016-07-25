@@ -9,7 +9,7 @@
           <div class="smedia-module">
             <h3>Social Media</h3>
             <ul class="smedia">
-              <li><a href="https://www.facebook.com/G6PDDeficiencyFoundation/"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="https://www.facebook.com/G6PDDeficiencyFoundation/" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
 
             </ul>
             <p><a href="/contact-us/" class="button">Contact Us</a></p>
