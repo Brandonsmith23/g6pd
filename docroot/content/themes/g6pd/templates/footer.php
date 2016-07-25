@@ -9,7 +9,7 @@
           <div class="smedia-module">
             <h3>Social Media</h3>
             <ul class="smedia">
-              <li><a href="https://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a></li>
+              <li><a href="https://www.facebook.com/G6PDDeficiencyFoundation/"><i class="fa fa-facebook fa-lg"></i></a></li>
 
             </ul>
             <p><a href="/contact-us/" class="button">Contact Us</a></p>
@@ -29,7 +29,7 @@
   </div>
   <div class="donate-footer">
     <div class="container">
-      Support our growing G6PD Deficiency Awareness Campaign Today &nbsp;<a class="donate-button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MC%E2%80%A6">Donate</a>
+      Support our growing G6PD Deficiency Awareness Campaign Today &nbsp;<a class="donate-button" target="_blank" href="<?php the_field('paypal_link', 'option'); ?>">Donate</a>
     </div>
   </div>
 </footer>
