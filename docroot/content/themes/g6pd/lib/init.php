@@ -74,3 +74,9 @@ function roots_widgets_init() {
   ));
 }
 add_action('widgets_init', 'roots_widgets_init');
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page();
+
+}
