@@ -22,6 +22,24 @@ $group = array (
       'default_value' => '',
       'placeholder' => '',
     ),
+    1 => 
+    array (
+      'key' => 'field_5796661abd3a2',
+      'label' => 'Facebook link',
+      'name' => 'facebook_link',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+    ),
   ),
   'location' => 
   array (
