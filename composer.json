@@ -104,7 +104,7 @@
     "wpackagist-plugin/woocommerce": "2.6.2",
     "wpackagist-plugin/wordpress-seo": "~3.0",
     "wpackagist-plugin/sendgrid-email-delivery-simplified": "1.8.2",
-    "mu-plugins": "~1.0.0"
+    "wpackagist-plugin/wp-custom-widget-area": "1.2.2"
   },
   "extra": {
     "installer-paths": {
